@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 4</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="title">
+      <h3>Práctica 4 - Alejandra Rodríguez Silva</h3>
+      <p class="subtitle">
+        <b>Submarino: </b>Recoge todas las monedas de la cueva sin que los peces globo te quiten las 3 vidas. Práctica de renderizado y movimiento en escenas 3D.
+      </p>
+      <div class="controls-overlay">
+        <em><b>Controles</b></em>
+        <table class="controls">
+          <tr><th>Acción</th><th>Tecla</th></tr>
+          <tr><td>Moverse</td><td>W / A / S / D</td></tr>
+          <tr><td>Subir / bajar</td><td>Espacio / Shift</td></tr>
+          <tr><td>Mirar</td><td>Flechas</td></tr>
+          <tr><td>Disparar</td><td>F</td></tr>
+          <tr><td>Derrapar Izq/Der</td><td>Q / E</td></tr>
+        </table>
+      </div>
+      <hr>
+    </div>
+  
+    <div class="layout">
+      <div class="frame">
+        <div class="frame-bar">
+          <span>Monedas: <span id="score">0 / 0</span></span>
+          <span>Vidas: <span id="lives"></span></span>
+        </div>
+  
+        <div class="game">
+          <canvas id="my_Canvas" width="1000" height="600"></canvas>
+          <div id="endScreen" class="end-screen hidden">
+            <h2 id="endTitle"></h2>
+            <p id="endText"></p>
+            <button id="replay">Jugar otra vez</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <script src="./index.js"></script>
+  </body>
+</html>

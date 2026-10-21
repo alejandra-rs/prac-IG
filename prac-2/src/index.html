@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="title">
+      <h3>Práctica 2 - Alejandra Rodríguez Silva</h3>
+      <p class="subtitle">
+        <b>Peggle: </b>Destruye todas las bolas naranjas para ganar. Al recoger
+        un proyectil con el recolector, se recupera.
+      </p>
+      <div class="controls">
+        <h4 class="controls-title"><em>Controles</em></h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Acción</th>
+              <th>PC</th>
+              <th>Móvil</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Rotar el cañón</td>
+              <td><kbd>&larr;</kbd> <kbd>&rarr;</kbd></td>
+              <td><kbd>Deslizar izq/der</kbd></td>
+            </tr>
+            <tr>
+              <td>Lanzar el proyectil</td>
+              <td><kbd>Espacio</kbd></td>
+              <td><kbd>Botón "Lanzar"</kbd></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <hr class="divider" />
+    </div>
+
+    <div class="game">
+      <div class="gameHeader">
+        <p id="ballInfo">
+          <span id="ballsLeft">0</span> <span> / </span>
+          <span id="totalBalls">10</span> <span> proyectiles</span>
+        </p>
+        <div id="mobileControls">
+          <button id="launchButton">Lanzar</button>
+        </div>
+      </div>
+      <div id="endScreen" class="hidden">
+        <p id="endMessage"></p>
+        <button id="replayButton">Jugar</button>
+      </div>
+      <canvas id="my_Canvas" width="1000" height="600"></canvas>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
