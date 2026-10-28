@@ -1,34 +1,93 @@
 <html>
   <head>
-    <title>Práctica S6 IG</title>
+    <title>Práctica 6 IG - ARS</title>
     <meta charset="UTF-8" />
-    <style>
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-      }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="./index.css" />
   </head>
 
   <body>
-    <!-- S6 -->
-    <!-- Descomentar cada ejemplo concreto para ejecutarlo-->
-    <!--<script src="script_01_cubomin.js"></script>-->
-    <!--<script src="script_02_esfera_minimo.js"></script>-->
-    <!--<script src="script_03_esfera_modular.js"></script>-->
-    <!--Botón para interacción ejemplo 04-->
-    <!--<button
-      type="button"
-      style="z-index: 12345; position: absolute; margin-left: 0%"
-      id="onoff"
-    >
-      Rejilla on/off
-    </button>
-    <script src="script_04_esfera_boton_rejilla.js"></script>-->
-    <!--<script src="script_05_estrellayplanetas.js"></script>-->
-    <!--<script src="script_06_estrellayplanetas.js"></script>-->
-    <script src="script_07_estrellayplanetasylunas.js"></script>
-    <!--<script src="script_08_polilinea.js"></script>-->
+    <div id="start" class="screen">
+      <h1>Descubre el Sistema Solar</h1>
+      <h2>Alejandra Rodríguez Silva</h2>
+      <button id="startButton">Despegar</button>
+    </div>
+    <div id="menu" class="screen">
+      <h1>¿Cuál es la misión de hoy?</h1>
+      <div id="menuButtons" class="row">
+        <button id="menuLearnButton">Aprender</button>
+        <button id="menuExploreButton">Explorar</button>
+      </div>
+    </div>
+    <div id="explore" class="corner">
+      <div class="row bar">
+        <button id="exploreMenuButton"><i class="fa-solid fa-arrow-left"></i> Volver al menú</button>
+        <nav class="panel row">
+          Vistas
+          <button id="generalViewButton">General</button>
+          <button id="thirdPersonViewButton">Tercera Persona</button>
+          <button id="firstPersonViewButton">Primera Persona</button>
+        </nav>
+      </div>
+      <div class="row bar">
+        <div class="row">
+          <div id="planetPicker">
+            <button id="planetPickerButton">Ver de cerca <i class="fa-solid fa-chevron-down"></i></button>
+            <div id="planetPickerPanel" class="panel hidden"></div>
+          </div>
+          <button id="namesButton"><i class="fa-solid fa-eye-slash"></i> Ocultar nombres</button>
+        </div>
+        <div class="panel row">
+          <button id="pauseButton"><i class="fa-solid fa-pause"></i> Pausa</button>
+          Velocidad
+          <input id="speedSlider" type="range" min="0.2" max="3" step="0.1" value="1">
+          <span id="speedValue">x1.0</span>
+        </div>
+      </div>
+      <div id="nearPlanetPrompt" class="panel hidden">
+        <p id="nearPlanetText"></p>
+        <button id="nearPlanetButton"><i class="fa-solid fa-magnifying-glass-plus"></i> Ver de cerca</button>
+      </div>
+      <div id="minimapFrame" class="hidden"></div>
+    </div>
+    <div id="learn" class="corner">
+      <div class="row bar">
+        <button id="learnMenuButton"><i class="fa-solid fa-arrow-left"></i> Volver al menú</button>
+        <div id="learnProgress" class="panel"></div>
+      </div>
+      <div id="tray"></div>
+      <div id="dragGhost" class="trayButton ghost hidden"></div>
+      <div id="learnMessage" class="panel hidden"></div>
+      <div id="learnComplete" class="panel hidden">
+        <p>¡Has construido el Sistema Solar!</p>
+        <button id="learnRestartButton"><i class="fa-solid fa-rotate-left"></i> Empezar de nuevo</button>
+      </div>
+    </div>
+    <div id="closeup" class="corner hidden">
+      <div class="row bar">
+        <button id="closeupExploreButton"><i class="fa-solid fa-arrow-left"></i> Volver a explorar</button>
+        <div class="row">
+          <button id="closeupMoonsButton"><i class="fa-solid fa-moon"></i> Lunas</button>
+          <button id="closeupSpinButton"><i class="fa-solid fa-rotate"></i> Giro</button>
+          <button id="closeupTiltButton"><i class="fa-solid fa-arrows-rotate"></i> Inclinar</button>
+        </div>
+      </div>
+      <p id="closeupTitle"></p>
+      <div id="factCard" class="panel">
+        <p><i class="fa-solid fa-sun"></i> <span id="factDay"></span></p>
+        <p><i class="fa-solid fa-calendar"></i> <span id="factYear"></span></p>
+        <p><i class="fa-solid fa-ruler"></i> <span id="factSize"></span></p>
+        <p><i class="fa-solid fa-moon"></i> <span id="factMoons"></span></p>
+        <p id="funFact"></p>
+        <button id="nextFactButton"><i class="fa-solid fa-lightbulb"></i> Otro dato</button>
+      </div>
+    </div>
+
+    <details id="help" class="panel hidden">
+      <summary>Instrucciones</summary>
+      <p id="helpText"></p>
+    </details>
+
+    <script src="index.js"></script>
   </body>
 </html>

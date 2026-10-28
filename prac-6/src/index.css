@@ -1,0 +1,334 @@
+:root {
+  --black: #000000;
+  --sky: #87ceeb;
+  --midnight: #030318;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--sky);
+  font-family: sans-serif;
+}
+
+canvas {
+  display: block;
+}
+
+h1,
+h2 {
+  font-weight: normal;
+}
+
+button {
+  font: inherit;
+  color: var(--sky);
+  background: var(--midnight);
+  border: 1px solid var(--sky);
+  border-radius: 12px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+button.active {
+  color: var(--midnight);
+  background: var(--sky);
+}
+
+.panel {
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.panel p {
+  margin: 0 0 12px;
+}
+
+input {
+  accent-color: var(--sky);
+}
+
+.screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  z-index: 2;
+}
+
+.screen button {
+  font-size: 1.5rem;
+  padding: 12px 32px;
+}
+
+.corner {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+#start {
+  justify-content: flex-end;
+  padding-bottom: 6vh;
+  pointer-events: none;
+}
+
+#start button {
+  pointer-events: auto;
+}
+
+#start h1 {
+  margin: 30px 0 0;
+}
+
+#start h2 {
+  margin: 0 0 auto;
+}
+
+#menu {
+  background: var(--midnight);
+}
+
+#menuButtons {
+  gap: 24px;
+}
+
+#menu button {
+  width: 380px;
+  height: 260px;
+  font-size: 2rem;
+  text-shadow: 0 0 8px var(--black);
+  background-position: center;
+  background-size: cover;
+}
+
+#menuLearnButton {
+  background-image: url("./img/learn.jpg");
+}
+
+#menuExploreButton {
+  background-image: url("./img/explore.jpg");
+}
+
+@media (max-width: 840px) {
+  #menuButtons {
+    flex-direction: column;
+  }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bar {
+  justify-content: space-between;
+  width: calc(100vw - 32px);
+  pointer-events: none;
+}
+
+.bar > * {
+  pointer-events: auto;
+}
+
+#explore {
+  gap: 4px;
+}
+
+.bar .panel {
+  padding: 8px 12px;
+}
+
+#speedValue {
+  min-width: 3em;
+}
+
+#tray,
+#nearPlanetPrompt,
+#learnMessage,
+#learnComplete,
+#closeupTitle {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#nearPlanetPrompt {
+  bottom: 40px;
+  text-align: center;
+}
+
+#planetPicker {
+  position: relative;
+}
+
+#planetPickerPanel:not(.hidden) {
+  position: absolute;
+  top: calc(100% + 8px);
+  max-height: 368px;
+  overflow-y: auto;
+  scrollbar-color: var(--sky) transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-bottom: 36px;
+}
+
+#labels {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#labels.namesOff {
+  visibility: hidden;
+}
+
+.planetLabel {
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+}
+
+#minimapFrame {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  width: 200px;
+  height: 200px;
+  border: 2px solid var(--sky);
+  pointer-events: none;
+}
+
+#closeupTitle {
+  top: 16px;
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+#factCard {
+  position: fixed;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  width: 300px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+#funFact {
+  padding-top: 12px;
+  border-top: 1px solid var(--sky);
+}
+
+#tray {
+  bottom: 40px;
+  display: flex;
+  gap: 16px;
+}
+
+.trayButton {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border: none;
+  border-radius: 50%;
+  background-size: 200% 100%;
+  animation: spin 8s linear infinite;
+  cursor: grab;
+  touch-action: none;
+}
+
+.trayButton::before {
+  content: attr(title);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 6px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.trayButton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.15) 0%, transparent 45%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+@keyframes spin {
+  to {
+    background-position: -128px 0;
+  }
+}
+
+.pickerButton {
+  flex-shrink: 0;
+  cursor: pointer;
+  touch-action: auto;
+}
+
+#learnProgress,
+#learnMessage {
+  font-size: 1.5rem;
+}
+
+#learnMessage {
+  top: 24px;
+  z-index: 3;
+}
+
+#learnComplete {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 32px 48px;
+  font-size: 2rem;
+  text-align: center;
+  z-index: 3;
+}
+
+#help {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  max-width: 320px;
+  z-index: 2;
+}
+
+#help summary {
+  cursor: pointer;
+}
+
+#helpText {
+  margin: 12px 0 0;
+  white-space: pre-line;
+}
+
+.pickedUp {
+  visibility: hidden;
+}
+
+.ghost {
+  position: fixed;
+  transform: translate(-50%, -50%) scale(1.2);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.hidden {
+  display: none;
+}
