@@ -2,6 +2,8 @@ import * as THREE from "three"
 import { resetLearn } from "./modes/learn";
 import { setView, applyNames } from "./views";
 import { showHelp } from "./help";
+import learnImage from "./img/learn.jpg";
+import exploreImage from "./img/explore.jpg";
 
 let state = "start";
 let paused = false;
@@ -33,6 +35,8 @@ export function setGameEvents(controls, planetObjects, orbitObjects) {
   camControls = controls;
   planets = planetObjects;
   orbits = orbitObjects;
+  document.getElementById("menuLearnButton").style.backgroundImage = "url(" + learnImage + ")";
+  document.getElementById("menuExploreButton").style.backgroundImage = "url(" + exploreImage + ")";
   document.getElementById("menuLearnButton").addEventListener("click", _ => { setMode("learn"); resetLearn(); })
   document.getElementById("menuExploreButton").addEventListener("click", _ => setMode("explore"))
   document.getElementById("exploreMenuButton").addEventListener("click", _ => setMode("menu"))

@@ -111,14 +111,6 @@ input {
   background-size: cover;
 }
 
-#menuLearnButton {
-  background-image: url("./img/learn.jpg");
-}
-
-#menuExploreButton {
-  background-image: url("./img/explore.jpg");
-}
-
 @media (max-width: 840px) {
   #menuButtons {
     flex-direction: column;
