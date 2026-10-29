@@ -1,7 +1,7 @@
 # Rebote bajo la gravedad
 ## [Alejandra Rodríguez Silva](https://github.com/alejandra-rs)
 
-[![Demostración de la práctica 1](./doc/demo.gif)](https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-1)
+<p align="center"><a href="https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-1"><img src="./doc/demo.gif" alt="Demostración de la práctica 1"></a></p>
 
 En el proyecto, se realiza una simulación del rebote de varios objetos al caer bajo la gravedad de distintos cuerpos celestes. En la demostración, se puede hacer clic sobre el botón "resetear" para volver a lanzar los objetos, empezando de nuevo la simulación. _[`Enlace a la aplicación en CodeSandbox`](https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-1)_.
 

@@ -1,7 +1,7 @@
 # Cueva submarina
 ## [Alejandra Rodríguez Silva](https://github.com/alejandra-rs)
 
-[![Demostración de la práctica 4](./doc/demo.gif)](https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-4)
+<p align="center"><a href="https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-4"><img src="./doc/demo.gif" alt="Demostración de la práctica 4"></a></p>
 
 En esta práctica se implementa un juego para la familiarización con la perspectiva y el movimiento tridimensional. En este juego, se deben encontrar 10 monedas en una cueva submarina. Al ser atacado por un pez globo, el jugador perderá una vida. Si se pierden 3 vidas, se termina el juego. El jugador cuenta con torpedos para matar a los peces globo. _[`Enlace a la aplicación en CodeSandbox`](https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-4)_.
 

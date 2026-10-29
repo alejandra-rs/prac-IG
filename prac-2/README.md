@@ -1,7 +1,7 @@
 # Peggle
 ## [Alejandra Rodríguez Silva](https://github.com/alejandra-rs)
 
-[![Demostración de la práctica 2](./doc/demo.gif)](https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-2)
+<p align="center"><a href="https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-2"><img src="./doc/demo.gif" alt="Demostración de la práctica 2"></a></p>
 
 En esta práctica, se implementa el juego Peggle. En este juego, se dispone de 5 proyectiles para destruir todas las bolas naranjas del tablero. Debajo de las bolas se encuentra un recolector, que permite recuperar el proyectil si cae sobre él. _[`Enlace a la aplicación en CodeSandbox`](https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-2)_.
 

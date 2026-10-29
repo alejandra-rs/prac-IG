@@ -1,8 +1,11 @@
 # Descubre el Sistema Solar
 ## [Alejandra Rodríguez Silva](https://github.com/alejandra-rs)
 
-[![Vídeo de Descubre el Sistema Solar](./doc/video.gif)](https://youtu.be/kHiZgxsxbjM)
-<sub>_[↑ Enlace al vídeo explicativo de la aplicación](https://youtu.be/kHiZgxsxbjM)_</sub>
+<p align="center">
+  <a href="https://youtu.be/kHiZgxsxbjM"><img src="./doc/video.gif" alt="Vídeo de Descubre el Sistema Solar"></a>
+  <br>
+  <sub><i><a href="https://youtu.be/kHiZgxsxbjM">↑ Enlace al vídeo explicativo de la aplicación</a></i></sub>
+</p>
 
 _**Descubre el Sistema Solar**_ es una aplicación hecha con `three.js` para aprender sobre el Sistema Solar jugando. En ella, los niños pueden colocar cada planeta en su órbita, explorar el sistema solar y descubrir curiosidades sobre los distintos cuerpos. Este programa se ha desarrollado como sexta práctica de la asignatura _Informática Gráfica_. _[`Enlace a la aplicación en CodeSandbox`](https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-6)_.
 

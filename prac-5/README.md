@@ -1,7 +1,7 @@
 # Bosque de noche
 ## [Alejandra Rodríguez Silva](https://github.com/alejandra-rs)
 
-[![Demostración de la práctica 5](./doc/demo.gif)](https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-5)
+<p align="center"><a href="https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-5"><img src="./doc/demo.gif" alt="Demostración de la práctica 5"></a></p>
 
 En esta práctica se puede explorar un bosque de noche con 2 campamentos. El objetivo es estudiar la iluminación con el modelo de Phong y la contribución de los distintos tipos de luces. _[`Enlace a la aplicación en CodeSandbox`](https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-5)_.
 

@@ -1,7 +1,7 @@
 # Sistema Solar con matrices
 ## [Alejandra Rodríguez Silva](https://github.com/alejandra-rs)
 
-[![Demostración de la práctica 3](./doc/demo.gif)](https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-3)
+<p align="center"><a href="https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-3"><img src="./doc/demo.gif" alt="Demostración de la práctica 3"></a></p>
 
 En esta práctica se representa el Sistema Solar. El _canvas_ contiene el Sol, los 8 planetas y 12 satélites. Para la representación se han utilizado transformaciones con matrices. _[`Enlace a la aplicación en CodeSandbox`](https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-3)_.
 
