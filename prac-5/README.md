@@ -1,4 +1,4 @@
-# Bosque de noche
+# Práctica 5 - Iluminación
 ## [Alejandra Rodríguez Silva](https://github.com/alejandra-rs)
 
 <p align="center"><a href="https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-5"><img src="./doc/demo.gif" alt="Demostración de la práctica 5"></a></p>

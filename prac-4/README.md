@@ -1,4 +1,4 @@
-# Cueva submarina
+# Práctica 4 - Cueva Submarina 3D
 ## [Alejandra Rodríguez Silva](https://github.com/alejandra-rs)
 
 <p align="center"><a href="https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-4"><img src="./doc/demo.gif" alt="Demostración de la práctica 4"></a></p>

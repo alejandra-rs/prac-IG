@@ -1,4 +1,4 @@
-# Rebote bajo la gravedad
+# Práctica 1 - Introducción
 ## [Alejandra Rodríguez Silva](https://github.com/alejandra-rs)
 
 <p align="center"><a href="https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-1"><img src="./doc/demo.gif" alt="Demostración de la práctica 1"></a></p>
