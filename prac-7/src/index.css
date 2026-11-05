@@ -1,0 +1,18 @@
+:root {
+  --black: #000000;
+  --sky: #87ceeb;
+  --midnight: #030318;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: var(--black);
+  color: var(--sky);
+  font-family: sans-serif;
+}
+
+canvas {
+  display: block;
+  touch-action: none;
+}
