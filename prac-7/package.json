@@ -4,7 +4,7 @@
   "description": "IG-EII: ocean plastic globe",
   "main": "index.html",
   "scripts": {
-    "start": "parcel ./src/index.html --open",
+    "start": "parcel ./src/index.html --open --no-cache",
     "build": "parcel build ./src/index.html"
   },
   "dependencies": {
