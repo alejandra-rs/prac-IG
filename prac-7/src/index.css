@@ -1,0 +1,211 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+
+:root {
+  --sky: #87ceeb;
+  --night: #030318;
+  --knob: 36px;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+  color: var(--sky);
+  font-family: sans-serif;
+}
+
+canvas {
+  display: block;
+  touch-action: none;
+}
+
+#intro {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 2px 24px #000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.5s;
+}
+
+.intro #intro {
+  opacity: 1;
+}
+
+#intro p {
+  grid-area: 1 / 1;
+  opacity: 0;
+}
+
+body:not(.loading) .first {
+  font-size: clamp(26px, 4.5vw, 52px);
+  font-weight: 300;
+  animation: fade 4.2s 0.8s both;
+}
+
+body:not(.loading) .second {
+  animation: reveal 1.6s 5.4s forwards;
+}
+
+#intro strong {
+  font-size: clamp(40px, 8vw, 96px);
+  color: var(--surface);
+  text-shadow: 0 0 32px var(--surface);
+}
+
+@keyframes fade {
+  0% { opacity: 0; transform: translateY(16px); }
+  25%, 75% { opacity: 1; transform: none; }
+  100% { opacity: 0; transform: translateY(-16px); }
+}
+
+@keyframes reveal {
+  from { opacity: 0; letter-spacing: 0.25em; }
+  to { opacity: 1; letter-spacing: 0.02em; }
+}
+
+#title, #lightSwitch, .infoPanel {
+  transition: opacity 1.2s;
+}
+
+.intro #title, .intro #lightSwitch, .intro .infoPanel {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#title {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  pointer-events: none;
+  color: #fff;
+  text-shadow: 0 2px 12px #000;
+}
+
+#title h1 {
+  font-size: clamp(24px, 4vw, 44px);
+}
+
+#title p {
+  margin: 6px 0 0;
+  color: var(--sky);
+}
+
+#lightSwitch {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  box-sizing: content-box;
+  width: calc(var(--knob) * 2);
+  padding: 4px;
+  border: 2px solid #fff;
+  border-radius: var(--knob);
+  background: var(--sky);
+  cursor: pointer;
+  transition: background 0.3s, opacity 1.2s;
+}
+
+.night #lightSwitch {
+  background: var(--night);
+}
+
+.knob {
+  display: grid;
+  place-items: center;
+  width: var(--knob);
+  height: var(--knob);
+  border-radius: 50%;
+  background: var(--night);
+  font-size: 20px;
+  transition: transform 0.3s;
+}
+
+.night .knob {
+  transform: translateX(var(--knob));
+}
+
+.sun { color: #ffd34d; }
+.moon { color: #e6ebf5; }
+.night .sun, body:not(.night) .moon { display: none; }
+
+.infoPanel {
+  position: fixed;
+  display: grid;
+  gap: 10px;
+  max-width: 320px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: rgba(3, 3, 24, 0.8);
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+#dayPanel, #plasticPanel { left: 24px; bottom: 24px; }
+#infoCard { right: 24px; bottom: 24px; }
+
+.night #dayPanel, body:not(.night) #plasticPanel, .night #infoCard, [hidden] { display: none; }
+
+#infoCard button {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  border: 0;
+  background: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+h1, h2, h3, p, ol { margin: 0; }
+h2, h3 { font-size: 16px; }
+
+.infoPanel p, ol { font-size: 13px; }
+.infoPanel p { color: var(--sky); }
+.infoPanel ol { padding-left: 20px; }
+.legendItem p { color: #fff; }
+.legendItem p, .tip { font-style: italic; }
+.legendItem h3 { color: var(--sky); }
+.infoPanel .summary, .infoPanel .total { color: #fff; font-size: 15px; }
+
+label, .legendItem, .timelineControls { display: flex; align-items: center; gap: 10px; }
+label { cursor: pointer; }
+.legendItem img { width: 88px; height: 88px; }
+
+.swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow: 0 0 8px var(--c);
+}
+
+.surface { --c: var(--surface); }
+.midwater { --c: var(--midwater); }
+.deep { --c: var(--deep); }
+
+#timelineBox { display: grid; gap: 6px; accent-color: var(--sky); }
+#timelineBox.projected { color: var(--midwater); accent-color: var(--midwater); font-weight: bold; }
+#timelineStock { font-size: 20px; font-weight: bold; }
+.range { display: flex; justify-content: space-between; }
+
+#timeline {
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+#timelinePlay {
+  width: 32px;
+  height: 32px;
+  flex: none;
+  border: 2px solid;
+  border-radius: 50%;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}

@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Práctica 7 IG - ARS</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+
+  <body class="night intro loading">
+    <div id="intro">
+      <p class="first">Qué bonito brilla el océano, ¿verdad?</p>
+      <p class="second"><strong>Es plástico.</strong></p>
+    </div>
+    <header id="title">
+      <h1>El destructor de mundos</h1>
+      <p>Alejandra Rodríguez Silva</p>
+    </header>
+    <button id="lightSwitch" title="Encender o apagar la luz">
+      <span class="knob">
+        <i class="fa-solid fa-sun sun"></i>
+        <i class="fa-solid fa-moon moon"></i>
+      </span>
+    </button>
+    <aside id="dayPanel" class="infoPanel">
+      <h2>Fuentes que más plástico generan</h2>
+      <div class="legendItem">
+        <img id="legend-takeout" alt="" />
+        <div><h3>1. Comida rápida</h3><p>Marcas con más envases encontrados en basura</p><ol id="takeoutTop"></ol></div>
+      </div>
+      <div class="legendItem">
+        <img id="legend-ship" alt="" />
+        <div><h3>2. Residuos plásticos por mar</h3><p>Mayores rutas exportadoras de plástico</p><ol id="routesTop"></ol></div>
+      </div>
+      <div class="legendItem">
+        <img id="legend-plant" alt="" />
+        <div><h3>3. Plantas de etileno</h3><p>Mayor capacidad de etileno</p><ol id="plantsTop"></ol></div>
+      </div>
+      <p class="tip">Arrastra con el ratón para girar la cámara. Usa la rueda para acercarte o alejarte. Haz clic en cualquier objeto para saber más sobre él.</p>
+    </aside>
+    <aside id="plasticPanel" class="infoPanel">
+      <h2>Plástico medido en el océano</h2>
+      <label><input type="checkbox" id="layer-surface" checked /><span class="swatch surface"></span>Superficie</label>
+      <label><input type="checkbox" id="layer-midwater" checked /><span class="swatch midwater"></span>Aguas intermedias (10-200 m)</label>
+      <label><input type="checkbox" id="layer-deep" checked /><span class="swatch deep"></span>Profundidad y fondo marino (+200 m)</label>
+      <div id="timelineBox">
+        <h3>Cantidad total de plástico</h3>
+        <p class="total"><span id="timelineStock"></span> en <span id="timelineYear"></span></p>
+        <div class="timelineControls">
+          <button id="timelinePlay" type="button"><i class="fa-solid fa-play"></i></button>
+          <input type="range" id="timeline" step="1" />
+        </div>
+        <p class="range"><span>2000</span><span>2060</span></p>
+      </div>
+      <p class="tip">Arrastra con el ratón para girar la cámara. Usa la rueda para acercarte o alejarte. Mueve la línea o pulsa play para observar la evolución de la cantidad de plásticos. </p>
+    </aside>
+    <div id="infoCard" class="infoPanel" hidden>
+      <button>×</button>
+      <h3></h3>
+      <p class="summary"></p>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
