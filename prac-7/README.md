@@ -208,16 +208,17 @@ Los modelos han sido simplificados para poder generar múltiples copias en todo 
 - [Solar System Scope](https://www.solarsystemscope.com/textures/) para las texturas de la Tierra.
 - [DeviantArt](https://www.deviantart.com/)
 
-### Iconos
-
-- [Font Awesome](https://fontawesome.com/) 6.5.1 para los iconos del sol, la luna y el botón de reproducir, licencia [CC BY 4.0](https://fontawesome.com/license/free).
-
 ### Documentación
 
 - [three.js](https://threejs.org/)
 - [OrbitControls (three.js docs)](https://threejs.org/docs/#examples/en/controls/OrbitControls)
 - [ShaderMaterial (three.js docs)](https://threejs.org/docs/#api/en/materials/ShaderMaterial)
 - [Tween.js](https://github.com/tweenjs/tween.js)
+
+### Otros
+
+- [Font Awesome](https://fontawesome.com/) 6.5.1 para los iconos del sol, la luna y el botón de reproducir, licencia [CC BY 4.0](https://fontawesome.com/license/free).
+- Música del vídeo: Music by <a href="https://pixabay.com/users/leberch-42823964/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=627002">Nikita Kondrashev</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=627002">Pixabay</a>
 
 ### Inteligencia Artificial
 - Autocompletado de _Visual Studio Code_ para la implementación de algunas funciones, especialmente en el desarrollo de los _scripts_ de descarga y procesamiento de datos.

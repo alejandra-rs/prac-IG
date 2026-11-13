@@ -28,9 +28,9 @@ Resolución de las prácticas de la asignatura Informática Gráfica, impartida 
 ### Progreso General
 
 <div align="center">
-  <img src="https://api.barbuilder.dev/percentage/67?color=4c71ff" alt="Progress">
+  <img src="https://api.barbuilder.dev/percentage/78?color=4c71ff" alt="Progress">
 
-  **67% completado** (6/9 prácticas)
+  **78% completado** (7/9 prácticas)
 
   <br>
 
