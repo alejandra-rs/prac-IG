@@ -5,7 +5,7 @@ import { createStarryBackground, createDayGlobe, createNightGlobe } from "./obje
 import { createPlasticLayer, resizePlastic } from "./objects/plastic.js";
 import { addPlasticSources } from "./objects/plasticSources.js";
 import { moveShips } from "./objects/shipRoutes.js";
-import { areLightsOff, playIntro, setupSourcesPanel, setupLightSwitch, setupPlasticPanel } from "./panels.js";
+import { areLightsOff, prepareIntro, playIntro, setupSourcesPanel, setupLightSwitch, setupPlasticPanel } from "./panels.js";
 import { hideInfo, setupInfoCard, showCentredInfo } from "./infoCard.js";
 import { followShip, isShipCameraOn, leaveShip, setupShipCamera, updateShipCamera } from "./shipCamera.js";
 import { earth, plasticLayers } from "./data.js";
@@ -17,6 +17,7 @@ let dayScene = new THREE.Scene(), nightScene = new THREE.Scene();
 let clock = new THREE.Clock(), ships = [], clickable = [];
 
 function init() {
+  prepareIntro();
   document.body.appendChild(renderer.domElement);
   setupCamera();
   createScenes();

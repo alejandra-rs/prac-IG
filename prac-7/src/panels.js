@@ -16,6 +16,11 @@ let lightsOff = true, introZoom = null, playTimer = null;
 
 export const areLightsOff = () => lightsOff;
 
+export function prepareIntro() {
+  document.body.classList.add("intro", "loading");
+  document.body.classList.toggle("night", lightsOff);
+}
+
 export function playIntro(camera) {
   document.body.classList.remove("loading");
   introZoom = new TWEEN.Tween({ distance: camera.position.length() }).to({ distance: INTRO_END_DISTANCE }, INTRO_MILLISECONDS)

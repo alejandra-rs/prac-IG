@@ -20,13 +20,13 @@ const GLOW_VERTEX_SHADER = `
 `;
 
 const GLOW_FRAGMENT_SHADER = `
-  uniform vec3 glowColor;
+  uniform vec3 uGlowColor;
   varying vec3 vNormal;
   varying vec3 vToCamera;
 
   void main() {
     float rim = clamp(-dot(normalize(vNormal), normalize(vToCamera)) * 2.0, 0.0, 1.0);
-    gl_FragColor = vec4(glowColor * pow(rim, 3.0), 1.0);
+    gl_FragColor = vec4(uGlowColor * pow(rim, 3.0), 1.0);
   }
 `;
 
@@ -62,7 +62,7 @@ function createClouds(globe) {
 
 function createGlow(globe) {
   return new THREE.Mesh(new THREE.SphereGeometry(globe.size * GLOW_SCALE, 64, 32),
-                        new THREE.ShaderMaterial({ uniforms: { glowColor: { value: GLOW_COLOR } },
+                        new THREE.ShaderMaterial({ uniforms: { uGlowColor: { value: GLOW_COLOR } },
                                                    vertexShader: GLOW_VERTEX_SHADER, fragmentShader: GLOW_FRAGMENT_SHADER,
                                                    side: THREE.BackSide, blending: THREE.AdditiveBlending, transparent: true, depthWrite: false }));
 }
