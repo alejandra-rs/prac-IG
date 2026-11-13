@@ -220,4 +220,5 @@ Los modelos han sido simplificados para poder generar múltiples copias en todo 
 - [Tween.js](https://github.com/tweenjs/tween.js)
 
 ### Inteligencia Artificial
-- 
+- Autocompletado de _Visual Studio Code_ para la implementación de algunas funciones, especialmente en el desarrollo de los _scripts_ de descarga y procesamiento de datos.
+- _Claude_ para la adaptación de los modelos 3D a los usados en la vista diurna del globo terráqueo.
