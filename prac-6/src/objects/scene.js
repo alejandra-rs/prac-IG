@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import stars from "../textures/stars.jpg";
 import { CSS2DObject } from "three/examples/jsm/renderers/CSS2DRenderer.js";
+import { addSunShaders } from "./sun.js";
 
 
 const textureLoader = new THREE.TextureLoader();
@@ -14,6 +15,7 @@ export function createStarryBackground() {
 
 export function createStar(star, widthSegments=32, heightSegments=16) {
   let starMesh = createMesh(star, widthSegments, heightSegments, THREE.MeshBasicMaterial);
+  addSunShaders(starMesh, star.size);
   starMesh.add(new THREE.PointLight(star.lightColor, 2, 0, 0))
   starMesh.rotation.z = star.tilt;
   starMesh.userData.spin = star.spin;

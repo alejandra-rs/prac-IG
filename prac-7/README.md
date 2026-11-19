@@ -1,4 +1,4 @@
-# El destructor de mundos
+# Práctica 7 - El destructor de mundos
 ## [Alejandra Rodríguez Silva](https://github.com/alejandra-rs)
 
 <p align="center">

@@ -1,5 +1,14 @@
-# Descubre el Sistema Solar
+# Práctica 6 - Descubre el Sistema Solar
 ## [Alejandra Rodríguez Silva](https://github.com/alejandra-rs)
+
+> [!NOTE]
+> Después de la entrega de esta práctica, se ha modificado el Sol añadiéndole _shaders_, como parte de la [práctica 8](../prac-8). Las modificaciones realizadas incluyen el cambio de la textura del cuerpo y la inclusión de una corona solar. El código de los _shaders_ se encuentra en [`/objects/sun.js`](./src/objects/sun.js), y se proporcionan sus explicaciones en una sección de dicha práctica ([_Shaders_ en la Práctica 6](../prac-8/README.md#shaders-en-la-práctica-6)). Toda la información de este documento corresponde a la versión previa y entregada de la aplicación.
+>
+> Para volver a la versión original, se pueden eliminar las siguientes líneas de [`/objects/scene.js`](./src/objects/scene.js):
+> ```js
+> import { addSunShaders } from "./sun.js";
+> addSunShaders(starMesh, star.size);
+> ```
 
 <p align="center">
   <a href="https://youtu.be/kHiZgxsxbjM"><img src="./doc/video.gif" alt="Vídeo de Descubre el Sistema Solar"></a>
