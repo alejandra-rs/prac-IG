@@ -43,7 +43,7 @@ Resolución de las prácticas de la asignatura Informática Gráfica, impartida 
   | **Práctica 5** | Iluminación de Phong en un bosque de noche | ![Completada](https://img.shields.io/badge/Estado-Completada-brightgreen?style=flat-square) | [Ver Práctica 5](./prac-5) | [Ver en CodeSandbox](https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-5) |
   | **Práctica 6** | Sistema Solar interactivo en `three.js` | ![Completada](https://img.shields.io/badge/Estado-Completada-brightgreen?style=flat-square) | [Ver Práctica 6](./prac-6) | [Ver en CodeSandbox](https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-6) |
   | **Práctica 7** | Visualización de datos geográficos de plásticos | ![Completada](https://img.shields.io/badge/Estado-Completada-brightgreen?style=flat-square) | [Ver Práctica 7](./prac-7) | [Ver en CodeSandbox](https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-7) |
-  | **Práctica 8** | Composiciones con _shaders_ de fragmento | ![Completada](https://img.shields.io/badge/Estado-Completada-brightgreen?style=flat-square) | [Ver Práctica 8](./prac-8) | [Ver en CodeSandbox](https://codesandbox.io/p/sandbox/github/alejandra-rs/prac-IG/tree/main/prac-7) |
+  | **Práctica 8** | Composiciones con _shaders_ de fragmento | ![Completada](https://img.shields.io/badge/Estado-Completada-brightgreen?style=flat-square) | [Ver Práctica 8](./prac-8) | - |
   | **Práctica 9** | - | ![Pendiente](https://img.shields.io/badge/Estado-Pendiente-orange?style=flat-square) | - | - |
 
 </div>

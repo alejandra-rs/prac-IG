@@ -8,7 +8,7 @@
 
 En esta octava práctica se busca experimentar con los _shaders_ de fragmento para realizar composiciones artísticas. Para ello, se han realizado dos composiciones _standalone_, así como la integración de estos códigos GLSL en las prácticas anteriores ([Práctica 6](../prac-6/) y [Práctica 7](../prac-7/)).
 
-Para las composiciones individuales, se ha tomado como inspiración la naturaleza, pues en ella conviven los patrones y la aleatoriedad, precisamente dos de las herramientas principales de un _shader_. Y, para hacerlo más endémico, se han representado elementos de la naturaleza canaria: el **_Aeonium canariense_**, una suculenta propia de las islas, y el **mar de nubes** que aparece sobre las medianías al atardecer.
+Para las composiciones individuales, se ha tomado como inspiración la naturaleza, pues en ella conviven los patrones y la aleatoriedad, precisamente dos de las herramientas principales de un _shader_. Y, para hacerlo más endémico, se han representado elementos de la naturaleza canaria: la **_Aeonium canariense_**, una suculenta propia de las islas, y el **mar de nubes** que aparece sobre las medianías al atardecer.
 
 ## Índice
 
@@ -73,7 +73,7 @@ El _shader_ ([`aeonium.frag`](./aeonium.frag)) sigue, para cada píxel, los sigu
 
 3. **Posición de las hojas.** Esta especie hace crecer sus hojas a su alrededor siguiendo la _**filotaxis**_, esto es, se posicionan en forma de espiral, con un ángulo entre cada una de ellas de 137,5º (_ángulo dorado o áureo_). Este comportamiento se replica en el _shader_, rotando cada hoja este mismo ángulo (`GOLDEN_ANG`) respecto de la anterior. De esta forma, se dibujan las 89 hojas (_número de Fibonacci, la naturaleza está llena de matemáticas..._) dentro de un bucle, en orden decreciente de edad (del exterior al interior). Su longitud `L` también depende de la edad, haciéndola crecer conforme las hojas son más antiguas.
 
-4. **Colocación de cada hoja.** Una vez calculados su ángulo y su longitud, se rota cada hoja respecto de la anterior, y se desplaza de forma que su base quede en el centro de la roseta. A nivel de código, esto equivale a realizar comprobaciones de pertenencia tras girar el píxel en sentido contrario (`rotate2d`) y desplazarlo `+L`.
+4. **Colocación de cada hoja.** Una vez calculados su ángulo y su longitud, se rota cada hoja respecto de la anterior, y se desplaza de forma que su base quede en el centro de la roseta. A nivel de código, esto equivale a realizar comprobaciones de pertenencia tras girar el píxel en sentido contrario (`rotate2d`) y desplazarlo de `L`.
 
 5. **Forma de la hoja.** Cada hoja es una elipse que se deforma para estrecharse en la base y en la punta. Concretamente, se modela la curva de su forma como `pow(sin(PI * pow(u, 0.85)), 0.35)`. Además, la distancia del píxel a esta elipse (`d`) indica si pertenece a la hoja (`d < 1`), dato que se reutiliza para colorear los bordes.
 
@@ -95,7 +95,7 @@ La animación se controla con `u_time`, causando el giro de las rosetas (`0.2 * 
 
 <p align="center">
   <img src="./doc/aeonium.gif" alt="Shader Aeonium canariense, versión legible" width="45%">
-  <img src="./doc/aeonium_tiny.gif" alt="Shader Aeonium canariense, versión reducida" width="45%"">
+  <img src="./doc/aeonium_tiny.gif" alt="Shader Aeonium canariense, versión reducida" width="45%">
   <br>
   <sub><i>Izquierda: <a href="./aeonium.frag"><code>aeonium.frag</code></a>. Derecha: <a href="./aeonium_tiny.frag"><code>aeonium_tiny.frag</code></a></i></sub>
 </p>
@@ -120,7 +120,7 @@ La animación se controla con `u_time`, causando el giro de las rosetas (`0.2 * 
 
 ### Inspiración
 
-El _mar de nubes_ es un fenómeno muy habitual en las medianías canarias. Se produce cuando los alisios arrastran aire húmedo, que junto con la inversión térmica forman una capa de nubes a media altura de las montañas. Visto desde la cumbre, parecen olas rompiendo contra las laderas, de ahí su nombre, pues recuerda a un mar. Contrariamente a la geometría del _Aeonium_, este _shader_ representa la aleatoriedad de la naturaleza.
+El _mar de nubes_ es un fenómeno muy habitual en las medianías canarias. Se produce cuando los alisios arrastran aire húmedo, que junto con la inversión térmica forman una capa de nubes a media altura de las montañas. Visto desde la cumbre, parecen olas rompiendo contra las laderas, de ahí su nombre, pues recuerda a un mar. Contrariamente a la geometría de la _Aeonium_, este _shader_ representa la aleatoriedad de la naturaleza.
 
 El _shader_ resultante muestra varias capas de nubes que se desplazan a distintas velocidades sobre el atardecer. Además, se puede interactuar con ellas usando el ratón, que abre el paso sobre ellas.
 
@@ -132,7 +132,7 @@ El _shader_ ([`clouds.frag`](./clouds.frag)) sigue, para cada píxel, los siguie
 
 2. **Cielo.** El fondo es un degradado vertical de naranja a morado.
 
-3. **Ruido.** Para generar la forma de las nubes, se ha implementado el ruido fractal propuesto en el libro de referencia ([_The Book of Shaders_](https://thebookofshaders.com/13/)). Este parte de un número pseudoaleatorio (`random`), con el que se genera ruido interpolando valores aleatorios sobre una cuadrícula (`noise`). El movimiento _browniano_ (`fbm`) resulta de la concatenación de 6 capas u octavas de este ruido, con detalle creciente e intensidad decreciente. Además, se deforman las coordenadas usando _domain warping_ (modificar el ruido con el propio ruido), consiguiendo formas más retorcidas.
+3. **Ruido.** Para generar la forma de las nubes, se ha implementado el ruido fractal propuesto en el libro de referencia ([_The Book of Shaders_](https://thebookofshaders.com/13/)). Este parte de un número pseudoaleatorio (`random`), con el que se genera ruido interpolando valores aleatorios sobre una cuadrícula (`noise`). El movimiento _browniano_ (`fbm`) resulta de la suma de 6 capas u octavas de este ruido, con detalle creciente e intensidad decreciente. Además, se deforman las coordenadas usando _domain warping_ (modificar el ruido con el propio ruido), consiguiendo formas más retorcidas.
 
 4. **Capas.** Se dibujan 4 capas de nubes, desde la más lejana hasta la más cercana. Cuanto más lejana es la capa, es más alta, más lenta y con un ruido más fino. Esto permite generar efecto de profundidad. Además, para que cada capa de nubes tenga una forma distinta, se calcula un _offset_ aleatorio para cada una de ellas.
 
@@ -185,11 +185,11 @@ Aun así, se logran mantener las capas, la bruma y la interacción con el ratón
 
 Tras la entrega de la práctica 6, se ha modificado el Sol añadiéndole dos _shaders_: uno para su superficie y otro para crearle una corona a su alrededor. El código se encuentra en [`sun.js`](../prac-6/src/objects/sun.js), y se aplica en `createStar` (llamada a `addSunShaders`).
 
-Ambos _shaders_ usan el mismo ruido fractal que el mar de nubes. No obstante, este se escala para ser calculado en 3 dimensiones para cada punto de la esfera (frente a 2d en el mar de nubes, plano). De no ser así, aparecerían cambios bruscos en la textura.
+Ambos _shaders_ usan el mismo ruido fractal que el mar de nubes. No obstante, en el caso del _shader_ de la superficie este se escala para ser calculado en 3 dimensiones para cada punto de la esfera (frente a 2D en el mar de nubes, plano). De no ser así, aparecerían cambios bruscos en la textura.
 
 1. **Superficie.** Para simular el movimiento del plasma, el ruido se desplaza con el tiempo y aclara u oscurece la textura original. Como en el mar de nubes, se aplica _domain warping_ para que las formas sean más irregulares. Además, para aportar más realismo, los bordes se oscurecen ligeramente.
 
-2. **Corona.** La corona se dibuja sobre un plano situado detrás del Sol, que siempre mira hacia la cámara, similar a las técnicas usadas en los primeros videojuegos. Sobre este plano se generan los rayos, utilizando ruido sobre el ángulo de cada píxel alrededor del Sol. Los rayos se desplazan con el tiempo, su brillo disminuye al alejarse y se vuelven más anaranjados.
+2. **Corona.** La corona se dibuja sobre un plano situado detrás del Sol, que siempre mira hacia la cámara, similar a las técnicas usadas en los primeros videojuegos. Sobre este plano se generan remolinos de luz naranja usando ruido y _domain warping_ que cambian de forma con el tiempo, como en el mar de nubes. Además, el borde de la corona se deforma según el ruido, y su brillo disminuye al alejarse del Sol.
 
 ### _Shaders_ en la Práctica 7
 
@@ -271,7 +271,7 @@ Tras aplicar estos cambios, el código pasó a ocupar **536 B**. El resto de mod
 
 **Inteligencia Artificial:**
 
-Nuevamente, se usó _Claude_ para reducir el tamaño del fichero más allá de 586 B. Sabiendo de la realización del _shader_ anterior que existían simplificaciones hechas para _tiny code_, se realizó el siguiente prompt:
+Nuevamente, se usó _Claude_ para reducir el tamaño del fichero por debajo de 586 B. Sabiendo de la realización del _shader_ anterior que existían simplificaciones hechas para _tiny code_, se realizó el siguiente prompt:
 
 > Once again, I'm stuck at making the code smaller. I'm currently at 586 B. I know there must be some work-around trick to simplify the functions in my code. Please, check the functions for noise and fbm introduced in these links: https://thebookofshaders.com/11/ and https://thebookofshaders.com/13/. Can you guide me towards some simplification of these functions to make my code <512B? 
 
